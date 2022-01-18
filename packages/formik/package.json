@@ -1,6 +1,6 @@
 {
   "name": "@speedy4all/formik",
-  "description": "Build forms in React, without the tears",
+  "description": "Build forms in React, without the tears, with ability to skip dirty for setFieldValue function",
   "version": "2.2.9",
   "license": "Apache-2.0",
   "author": "Jared Palmer <jared@palmer.net> (https://jaredpalmer.com)",

@@ -572,10 +572,11 @@ export function useFormik<Values extends FormikValues = FormikValues>({
   );
 
   const setFieldValue = useEventCallback(
-      (field: string, value: any, shouldValidate?: boolean, skipDirtyForm?: boolean) => {
-        if(skipDirtyForm) {
-          skipDirty.current = true;
-        }
+
+    (field: string, value: any, shouldValidate?: boolean, skipDirtyForm?: boolean) => {
+      if(skipDirtyForm) {
+        skipDirty.current = true;
+      }
       dispatch({
         type: 'SET_FIELD_VALUE',
         payload: {
@@ -934,7 +935,7 @@ export function useFormik<Values extends FormikValues = FormikValues>({
     [handleBlur, handleChange, state.values]
   );
 
-    const dirty = React.useMemo(
+  const dirty = React.useMemo(
         () => {
             if(skipDirty.current){
                 skipDirty.current = false;
