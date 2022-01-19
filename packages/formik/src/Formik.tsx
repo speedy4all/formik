@@ -572,6 +572,7 @@ export function useFormik<Values extends FormikValues = FormikValues>({
   );
 
   const setFieldValue = useEventCallback(
+
     (field: string, value: any, shouldValidate?: boolean, skipDirtyForm?: boolean) => {
       if(skipDirtyForm) {
         skipDirty.current = true;
@@ -593,7 +594,7 @@ export function useFormik<Values extends FormikValues = FormikValues>({
   );
 
   const executeChange = React.useCallback(
-    (eventOrTextValue: string | React.ChangeEvent<any>, maybePath?: string, skipDirtyForm?: boolean) => {
+      (eventOrTextValue: string | React.ChangeEvent<any>, maybePath?: string, skipDirtyForm?: boolean) => {
       // By default, assume that the first argument is a string. This allows us to use
       // handleChange with React Native and React Native Web's onChangeText prop which
       // provides just the value of the input.
@@ -642,7 +643,7 @@ export function useFormik<Values extends FormikValues = FormikValues>({
 
       if (field) {
         // Set form fields by name
-        setFieldValue(field, val, false, skipDirtyForm);
+          setFieldValue(field, val, false, skipDirtyForm);
       }
     },
     [setFieldValue, state.values]
@@ -936,15 +937,15 @@ export function useFormik<Values extends FormikValues = FormikValues>({
   );
 
   const dirty = React.useMemo(
-    () => {
-      if(skipDirty.current){
-        skipDirty.current = false;
-        return false;
-      }
-      return !isEqual(initialValues.current, state.values)
-    },
-    [initialValues.current, state.values]
-  );
+        () => {
+            if(skipDirty.current){
+                skipDirty.current = false;
+                return false;
+            }
+            return !isEqual(initialValues.current, state.values)
+        },
+        [initialValues.current, state.values]
+    );
 
   const isValid = React.useMemo(
     () =>
