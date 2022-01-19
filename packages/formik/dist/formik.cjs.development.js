@@ -710,7 +710,6 @@ function useFormik(_ref) {
       }
     });
     var willValidate = shouldValidate === undefined ? validateOnChange : shouldValidate;
-    console.log(willValidate);
     return willValidate ? validateFormWithHighPriority(setIn(state.values, field, value)) : Promise.resolve();
   });
   var executeChange = React.useCallback(function (eventOrTextValue, maybePath, skipDirtyForm) {
@@ -755,7 +754,7 @@ function useFormik(_ref) {
 
     if (field) {
       // Set form fields by name
-      setFieldValue(field, val, false, skipDirtyForm);
+      setFieldValue(field, val, undefined, skipDirtyForm);
     }
   }, [setFieldValue, state.values]);
   var handleChange = useEventCallback(function (eventOrPath) {
