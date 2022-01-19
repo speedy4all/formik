@@ -585,6 +585,7 @@ export function useFormik<Values extends FormikValues = FormikValues>({
       });
       const willValidate =
         shouldValidate === undefined ? validateOnChange : shouldValidate;
+      console.log(willValidate);
       return willValidate
         ? validateFormWithHighPriority(setIn(state.values, field, value))
         : Promise.resolve();
