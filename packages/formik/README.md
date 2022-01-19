@@ -13,15 +13,6 @@
 Function `setFieldValue` has a new parameter called `skipDirtyForm` by default false
 </br>
 The new signature is `setFieldValue(path: string, value: any, shouldValidate: boolean default false, skipDirtyForm: boolean default false)`
-When called with `skipDirtyForm=true`, the dirty flag is set to false, this is useful when values are changed by the developer and the user is agnostic of these changes, they don't affect the business 
-and they should be ignored  
-
-
-## *** Changes for this version ***
-
-Function `setFieldValue` has a new parameter called `skipDirtyForm` by default false
-</br>
-The new signature is `setFieldValue(path: string, value: any, shouldValidate: boolean default false, skipDirtyForm: boolean default false)`
 When called with `skipDirtyForm=true`, the dirty flag is set to false, this is useful when values are changed by the developer and the user is agnostic of these changes, they don't affect the business
 and they should be ignored
 
